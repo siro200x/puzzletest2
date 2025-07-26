@@ -3,14 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>スライドパズル</title>
     <style>
+        html,
         body {
             font-family: sans-serif;
             text-align: center;
             margin: 0;
-            padding: 1em;
+            padding: 0;
             height: 100%;
+        }
+
+        .fullscreen {
+            width: 100vw;
+            height: 100vh;
         }
 
         #puzzle {
@@ -50,7 +57,7 @@
     </style>
 </head>
 
-<body>
+<body class="fullscreen">
     <h2>スライドパズル</h2>
     <div id="puzzle"></div>
     <button onclick="shuffleTiles()">シャッフル</button>
