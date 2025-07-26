@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>スライドパズル</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 1em;
+        }
+
+        #puzzle {
+            width: 90vmin;
+            height: 90vmin;
+            max-width: 320px;
+            max-height: 320px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 2px;
+        }
+
+        .tile {
+            width: 100px;
+            height: 100px;
+            background-image: url('plz01.jpg');
+            /*画像を入れる*/
+            background-size: 300px 300px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .empty {
+            background: #eee;
+            cursor: default;
+        }
+
+        button {
+            margin-top: 1em;
+            padding: 0.5em 1em;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>スライドパズル</h2>
+    <div id="puzzle"></div>
+    <button onclick="shuffleTiles()">シャッフル</button>
+
+    <script src="js/puzzle.js"></script>
+</body>
+
+</html>
