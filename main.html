@@ -33,8 +33,6 @@
         }
 
         .tile {
-            width: 100px;
-            height: 100px;
             background-image: url('plz01.jpg');
             /*画像を入れる*/
             background-size: 300px 300px;
@@ -54,6 +52,19 @@
             padding: 0.5em 1em;
             font-size: 1rem;
         }
+
+        .hidden {
+            display: none;
+        }
+
+        #completeImage {
+            width: 300px;
+            height: 300px;
+            background-image: url('plz01.jpg');
+            background-size: cover;
+            margin: 1em auto;
+            border: 2px solid #333;
+        }
     </style>
 </head>
 
@@ -61,6 +72,12 @@
     <h2>スライドパズル</h2>
     <div id="puzzle"></div>
     <button onclick="shuffleTiles()">シャッフル</button>
+
+    <div id="completeImage" class="hidden"></div>
+    <div id="choices" class="hidden">
+        <button onclick="restartGame()">もう一度</button>
+        <button onclick="endGame()">終了</button>
+    </div>
 
     <script src="js/puzzle.js"></script>
 </body>

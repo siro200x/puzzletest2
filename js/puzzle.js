@@ -34,12 +34,46 @@ function moveTile(index) {
         [tiles[emptyIndex], tiles[index]] = [tiles[index], tiles[emptyIndex]];
         createTiles();
         checkWin();
+        checkSolved();
     }
+}
+function isPuzzleSolved() {
+    for (let i = 0; i < tiles.length - 1; i++) {
+        if (tiles[i] !== i) return false;
+    }
+    return true;
+}
+
+function checkSolved() {
+    if (isPuzzleSolved()) {
+        showCompleteImage();
+        showChoiceButtons();
+    }
+}
+
+function showCompleteImage() {
+    document.getElementById("puzzle").style.display = "none";
+    document.getElementById("completeImage").classList.remove("hidden");
+}
+
+function showChoiceButtons() {
+    document.getElementById("choices").classList.remove("hidden");
+}
+
+function restartGame() {
+    // シャッフルや初期化処理
+    location.reload(); // 簡単な方法:ページ再読込
+}
+
+function endGame() {
+    document.body.innerHTML = "<h2>遊んでくれてありがとう！</h2>";
 }
 
 function checkWin() {
     const correct = [...Array(8).keys()].map(n => n + 1).concat(null);
     if (tiles.join() === correct.join()) {
+        showCompleteImage();
+        showChoiceButtons();
         setTimeout(() => alert("完成!"), 100);
     }
 }
