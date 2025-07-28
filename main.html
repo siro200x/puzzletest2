@@ -33,7 +33,7 @@
         }
 
         .tile {
-            background-image: url('plz01.jpg');
+            background-image: url('plz02.jpg');
             /*画像を入れる*/
             background-size: 300px 300px;
             border: 1px solid #ccc;
@@ -71,13 +71,13 @@
 <body class="fullscreen">
     <h2>スライドパズル</h2>
     <div id="puzzle"></div>
-    <button onclick="shuffleTiles()">シャッフル</button>
 
     <div id="completeImage" class="hidden"></div>
     <div id="choices" class="hidden">
         <button onclick="restartGame()">もう一度</button>
         <button onclick="endGame()">終了</button>
     </div>
+    <button id="shuffleBtn" onclick="shuffleTiles()">シャッフル</button>
 
     <script src="js/puzzle.js"></script>
 </body>

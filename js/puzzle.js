@@ -74,6 +74,7 @@ function checkWin() {
     if (tiles.join() === correct.join()) {
         showCompleteImage();
         showChoiceButtons();
+        document.getElementById("shuffleBtn").style.display = "none";
         setTimeout(() => alert("完成!"), 100);
     }
 }
